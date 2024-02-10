@@ -25,4 +25,4 @@ const CopyCard = ({text}: { text: string }) => {
     );
 };
 
-export default CopyCard;
+export default CopyCard

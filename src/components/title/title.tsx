@@ -4,11 +4,15 @@ import React from 'react';
 import {Text} from '@geist-ui/core'
 import classes from './title.module.sass'
 
-const Title = (): React.ReactNode => {
+interface ITitle {
+    text: string
+}
+
+const Title = ({text}: ITitle): React.ReactNode => {
     return (
         <>
             <Text className={classes.text} h1>
-                Генератор
+                {text}
             </Text>
         </>
     );

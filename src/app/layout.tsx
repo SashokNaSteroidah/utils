@@ -5,7 +5,6 @@ import "../styles/global.sass"
 import GeistProviderClient from "@/providers/GeistProviderClient";
 import CssBaselineClient from "@/providers/CssBaselineClient";
 import Center from "@/components/center/Center";
-import Title from "@/components/title/title";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -21,7 +20,6 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
             <CssBaselineClient/>
             <body className={inter.className}>
             <Center>
-                <Title />
                 {children}
             </Center>
             </body>
