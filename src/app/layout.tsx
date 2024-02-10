@@ -4,7 +4,6 @@ import React from "react";
 import "../styles/global.sass"
 import GeistProviderClient from "@/providers/GeistProviderClient";
 import CssBaselineClient from "@/providers/CssBaselineClient";
-import Center from "@/components/center/Center";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -19,9 +18,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         <GeistProviderClient>
             <CssBaselineClient/>
             <body className={inter.className}>
-            <Center>
-                {children}
-            </Center>
+            {children}
             </body>
         </GeistProviderClient>
         </html>
