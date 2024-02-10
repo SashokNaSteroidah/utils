@@ -19,7 +19,7 @@ const UuidPage = (): React.ReactNode => {
         <div style={{textAlign: "center"}}>
             <Text h2 style={{margin: "10px 0 30px 0"}}>UUID</Text>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                <CopyCard text={uuid} />
+                <CopyCard text={uuid} height="58px" />
                 <Button style={{margin: "0 0 0 20px"}} iconRight={<RefreshCcw/>} auto type="success" onClick={() => generateUuid()}
                         placeholder={undefined}/>
             </div>
