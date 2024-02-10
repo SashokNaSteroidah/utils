@@ -1,23 +1,34 @@
 "use client"
 
 import React, {useEffect, useState} from 'react';
+import {Button, Text} from "@geist-ui/core";
+import {RefreshCcw} from '@geist-ui/icons'
+import CopyCard from "@/components/copy/copyCard";
 
 const UuidPage = (): React.ReactNode => {
-    const [uuid, setUuid] = useState<string>(crypto.randomUUID())
+    const [uuid, setUuid] = useState<string>("")
     const generateUuid = (): void => {
         setUuid(crypto.randomUUID())
     }
 
+    useEffect(() => {
+        generateUuid()
+    }, []);
+
     return (
-        <>
-            <div>
-                <span>
-                    {uuid}
-                </span>
-                <button onClick={() => generateUuid()}>Regen UUID</button>
+        <div style={{textAlign: "center"}}>
+            <Text h2 style={{margin: "10px 0 30px 0"}}>UUID</Text>
+            <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                <CopyCard text={uuid} />
+                <Button style={{margin: "0 0 0 20px"}} iconRight={<RefreshCcw/>} auto type="success" onClick={() => generateUuid()}
+                        placeholder={undefined}/>
             </div>
-            Generate by crypto (webAPI)
-        </>
+            <div style={{margin: "20px 0 0"}}>
+                <Text small>
+                    Generate by crypto (webAPI)
+                </Text>
+            </div>
+        </div>
     );
 };
 
