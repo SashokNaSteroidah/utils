@@ -3,8 +3,8 @@ import type {Metadata} from "next";
 import Title from "@/components/title/title";
 
 export const metadata: Metadata = {
-    title: "Utils | decode base64",
-    description: "utils for decode base64",
+    title: "Utils | encode base64",
+    description: "utils for encode base64",
 };
 const UuidLayout = ({children}: {children: React.ReactNode}): React.ReactNode => {
     return (
