@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card} from "@geist-ui/core";
+import {Card, Tooltip} from "@geist-ui/core";
 import {ToastTypes} from "@geist-ui/core/dist/use-toasts";
 import {useCustomToast} from "@/hooks/toast/toast";
 
@@ -23,12 +23,14 @@ const CopyCard = ({text, height}: ICopyCardProps) => {
         }
     }
     return (
-        <Card width="450px" height={height || "58px"} style={{overflow: "auto"}} type={undefined} hoverable
-              onClick={() => copyHandler(text)}>
+        <Tooltip text="Нажимите на карточку, чтобы скопировать значение" type="success" placement="bottom" style={{color: "white"}}>
+            <Card width="450px" height={height || "58px"} style={{overflow: "auto"}} type={undefined} hoverable
+                  onClick={() => copyHandler(text)}>
             <span>
                 {text}
             </span>
-        </Card>
+            </Card>
+        </Tooltip>
     );
 };
 
