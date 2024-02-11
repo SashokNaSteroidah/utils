@@ -3,14 +3,22 @@
 import React, {useState} from 'react';
 import {Button, Text, Textarea} from "@geist-ui/core";
 import CopyCard from "@/components/copy/copyCard";
+import {useCustomToast} from "@/hooks/toast/toast";
 
 const DecodeBase64 = (): React.ReactNode => {
     const [textArea, setTextArea] = useState("")
     const [result, setResult] = useState("")
+    const showToast = useCustomToast();
 
     const decode = (): void => {
-        const result = atob(textArea)
-        setResult(result)
+        try {
+            const result = atob(textArea)
+            setResult(result)
+            showToast('Декодирование успешно.', "success");
+            return
+        } catch (e) {
+            showToast('Не валидное значение.', "error");
+        }
     }
 
     const keyDecrypt = (event: React.KeyboardEvent<string>): void => {
