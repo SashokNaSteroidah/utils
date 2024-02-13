@@ -23,4 +23,10 @@ export const MainPages = [
         subName: "из Base64",
         link: "/base64-to-img",
     },
+    {
+        id: "4",
+        name: "Beautify",
+        subName: "JSON",
+        link: "/beautify-json",
+    },
 ]
